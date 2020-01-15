@@ -72,6 +72,7 @@ The alignment depends on the time needed to load the reference, more than the nu
 As an example, running on 216 fastq.gz (108 paired-end samples), which had a size of 2G on average :
 Sampling : 5 hours
 Alignment : 15 minutes
+
 For an other set, with 738 fastq.gz (369 paired-end samples), again with a size of 2G on average :
 Sampling : 15 hours
 Alignment : 17 minutes
