@@ -7,10 +7,10 @@ This bash script produces a "meta-bam" file by :
 ## Dependencies
 
 This script requires :
-- **[reformat.sh](https://github.com/BioInfoTools/BBMap)** Included in BBMap, it allows the random sampling of reads
-- **[STAR](https://github.com/alexdobin/STAR)** Version 2.7.0f was tested, but all version should work
+- **[reformat.sh](https://github.com/BioInfoTools/BBMap)** Part of BBMap, for random sampling of reads
+- **[STAR](https://github.com/alexdobin/STAR)** Version 2.7.0f was tested, but all versions should work
 
-Both requirements can be downloaded as so, or directly installed on a conda environment, using :
+Both dependencies can be downloaded as so, or directly installed on a conda environment, using :
 ```
 conda install -c bioconda star
 conda install -c bioconda bbmap
@@ -22,15 +22,15 @@ To properly align, STAR first needs an indexed genome. To create your index, fol
 
 ## How to Run it ?
 
-Once all the dependencies are installed (or your conda environment activated) you can run the script.
+Once all dependencies are installed (or your conda environment activated), run the script as follows:
 ```
 ./meta-bam.sh [fastQList] [NbTotalReads] [referenceGenome]
 ```
 
 The parameters are :
-- [fastQList] = A file containing the path to every paired-end fastq.gz to sample from
-- [NbTotalReads] = An integer, total number of million reads to keep in the final BAM file (input 5 means 5'000'000)
-- [referenceGenome] = Path to reference genome index for STAR alignment
+- [fastQList] = A text file containing the paths to every paired-end fastq.gz to sample from
+- [NbTotalReads] = An integer: millions of reads to keep in the final BAM file (input 5 means 5'000'000)
+- [referenceGenome] = Path to the reference genome index for STAR alignment
 
 Example :
 ```
@@ -60,10 +60,10 @@ Every result can be found in the meta-bam-out folder :
 │   │   ├── STARoutputAligner.out.sam
 ```
 
-An example of a typical fastq file is available as exampleFastqFile.txt on the github.
+An example of a typical fastQList file is provided in exampleFastqFile.txt.
 Note that the path to the actual fastq.gz files can be either relative or absolute, as long as the file name ends with 1.fastq.gz or 2.fastq.gz, and the rest of the name matches between paired files.
 
-## Process time
+## Processing time
 
 Time needed to complete the jod widely depend on the size of your input dataset (both individual size file and number of files).
 The random sampling needs to open and read each file entirely, so this part especially can be quite long.
