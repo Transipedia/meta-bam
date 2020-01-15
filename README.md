@@ -1,7 +1,7 @@
 # meta-bam
 
 This bash script produces a "meta-bam" file by :
-- sampling list of reads randomly selected in a group of paired-end fastq(gz) file.
+- sampling list of reads randomly selected in a group of fastq(gz) file.
 - aligning those reads to a reference genome using the STAR aligner.
 
 ## Dependencies
@@ -24,17 +24,18 @@ STAR needs an indexed genome. To create your index, follow the steps in part 2 o
 
 Once all dependencies are installed (or your conda environment activated), run the script as follows:
 ```
-./meta-bam.sh [fastQList] [NbTotalReads] [referenceGenome]
+./meta-bam.sh [SE/PE] [fastQList] [NbTotalReads] [referenceGenome]
 ```
 
 The parameters are :
-- [fastQList] = A text file containing the paths to every paired-end fastq.gz to sample from
+- [SE/PE] = SE or PE, for single-end of paired-end data
+- [fastQList] = A text file containing paths to every fastq.gz to sample from (can be single-end or paired-end data)
 - [NbTotalReads] = An integer: millions of reads to keep in the final BAM file (input 5 means 5'000'000)
 - [referenceGenome] = Path to the reference genome index for STAR alignment
 
 Example :
 ```
-./meta-bam.sh listFastQgz.txt 50 data/indexStar
+./meta-bam.sh PE listFastQgz.txt 50 data/indexStar
 ```
 
 ## Final folder hierarchy
@@ -61,15 +62,16 @@ Every result can be found in the meta-bam-out folder :
 ```
 
 A typical fastQList file is provided in exampleFastqFile.txt.
-Note that the path to the actual fastq.gz files can be either relative or absolute, as long as the file name ends with 1.fastq.gz or 2.fastq.gz, and the rest of the name matches between paired files.
+Note that the path to the actual fastq.gz files can be either relative or absolute.
+For paired-end data, each pair must be side by side in the file.
 
 ## Processing time
 
-Runtime depends on the size of your input dataset (both individual size file and number of files) and sampling depth. 
+Runtime depends on the size of your input dataset (both individual size file and number of files) and sampling depth.
 
 The random sampling needs to open and read each file entirely, so this step is usually the limiting one.
 
-Example runtimes: 
+Example runtimes:
 - 50M reads from 108 paired-end libraries of mean size 2Gb/file (gzipped) :
 Sampling : 5 hours
 Alignment : 15 minutes
@@ -78,4 +80,4 @@ Alignment : 15 minutes
 Sampling : 15 hours
 Alignment : 17 minutes
 
-*_ Sampling time for one file ranges from 4 minutes (2Gb fastq.gz) to 6 minutes (10Gb fastq.gz), with 1 million reads sampled._*
+*Sampling time for one file ranges from 4 minutes (2Gb fastq.gz) to 6 minutes (10Gb fastq.gz), with 1 million reads sampled.*
