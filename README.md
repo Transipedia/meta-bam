@@ -59,3 +59,19 @@ Every result can be found in the meta-bam-out folder :
 │   │   ├── STARoutputLog.final.out
 │   │   ├── STARoutputAligner.out.sam
 ```
+
+An example of a typical fastq file is available as exampleFastqFile.txt on the github.
+Note that the path to the actual fastq.gz files can be either relative or absolute, as long as the file name ends with 1.fastq.gz or 2.fastq.gz, and the rest of the name matches between paired files.
+
+## Process time
+
+Time needed to complete the jod widely depend on the size of your input dataset (both individual size file and number of files).
+The random sampling needs to open and read each file entirely, so this part especially can be quite long.
+The alignment depends on the time needed to load the reference, more than the number of reads.
+
+As an example, running on 216 fastq.gz (108 paired-end samples), which had a size of 2G on average :
+Sampling : 5 hours
+Alignment : 15 minutes
+For an other set, with 738 fastq.gz (369 paired-end samples), again with a size of 2G on average :
+Sampling : 15 hours
+Alignment : 17 minutes
