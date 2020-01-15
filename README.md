@@ -18,7 +18,7 @@ conda install -c bioconda bbmap
 
 ## Preparation
 
-To properly align, STAR first needs an indexed genome. To create your index, follow the steps in part 2 of STAR manual (http://labshare.cshl.edu/shares/gingeraslab/www-data/dobin/STAR/STAR.posix/doc/STARmanual.pdf)
+STAR needs an indexed genome. To create your index, follow the steps in part 2 of the STAR manual (http://labshare.cshl.edu/shares/gingeraslab/www-data/dobin/STAR/STAR.posix/doc/STARmanual.pdf)
 
 ## How to Run it ?
 
@@ -65,16 +65,17 @@ Note that the path to the actual fastq.gz files can be either relative or absolu
 
 ## Processing time
 
-Time needed to complete the jod widely depend on the size of your input dataset (both individual size file and number of files).
-The random sampling needs to open and read each file entirely, so this part especially can be quite long.
-The alignment depends on the time needed to load the reference, more than the number of reads.
+Runtime depends on the size of your input dataset (both individual size file and number of files) and sampling depth. 
 
-As an example, running on 216 fastq.gz (108 paired-end samples), which had a size of 2G on average :
+The random sampling needs to open and read each file entirely, so this step is usually the limiting one.
+
+Example runtimes: 
+- 50M reads from 108 paired-end libraries of mean size 2Gb/file (gzipped) :
 Sampling : 5 hours
 Alignment : 15 minutes
 
-For an other set, with 738 fastq.gz (369 paired-end samples), again with a size of 2G on average :
+- 50M reads from 369 paired-end libraries of mean size 2Gb/file (gzipped) :
 Sampling : 15 hours
 Alignment : 17 minutes
 
-*_Count approximately 6 minutes per sample for 10G sized fastq.gz, and 4 minutes per sample for 2G sized fastq.gz if you aim to recover 1 million reads per sample._*
+*_ Sampling time for one file ranges from 4 minutes (2Gb fastq.gz) to 6 minutes (10Gb fastq.gz), with 1 million reads sampled._*
