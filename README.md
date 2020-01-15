@@ -2,7 +2,7 @@
 
 This bash script produces a "meta-bam" file by :
 - sampling list of reads randomly selected in a group of paired-end fastq(gz) file.
-- aligning those reads to a reference genome using STAR aligner.
+- aligning those reads to a reference genome using the STAR aligner.
 
 ## Dependencies
 
