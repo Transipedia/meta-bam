@@ -60,7 +60,7 @@ Every result can be found in the meta-bam-out folder :
 │   │   ├── STARoutputAligner.out.sam
 ```
 
-An example of a typical fastQList file is provided in exampleFastqFile.txt.
+A typical fastQList file is provided in exampleFastqFile.txt.
 Note that the path to the actual fastq.gz files can be either relative or absolute, as long as the file name ends with 1.fastq.gz or 2.fastq.gz, and the rest of the name matches between paired files.
 
 ## Processing time
