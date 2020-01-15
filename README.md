@@ -77,6 +77,4 @@ For an other set, with 738 fastq.gz (369 paired-end samples), again with a size 
 Sampling : 15 hours
 Alignment : 17 minutes
 
-Both test were conducted aiming to recover 50 million reads, and align them on the Human Genom 38 (hg38)
-
-*_TL:DR ==> Count approximately 6 minutes per sample for 10G sized fastq.gz, and 4 minutes per sample for 2G sized fastq.gz if you aim to recover 1 million reads per sample._*
+*_Count approximately 6 minutes per sample for 10G sized fastq.gz, and 4 minutes per sample for 2G sized fastq.gz if you aim to recover 1 million reads per sample._*
