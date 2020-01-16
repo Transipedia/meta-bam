@@ -11,7 +11,7 @@ mkdir -p meta-bam-out
 
 ### Sampling ###
 
-if [[ "$SE_PE" == "SE" ]]
+if [[ "$SE_PE" == "-SE" ]]
   then
     nbReadsPerFastq=$(($nbTotalReads*1000000/$nbFastq))
     rm -f meta-bam-out/sample.fq
@@ -25,7 +25,7 @@ if [[ "$SE_PE" == "SE" ]]
     done<$fastQList
 
 
-elif [[ "$SE_PE" == "PE" ]]
+elif [[ "$SE_PE" == "-PE" ]]
   then
     nbReadsPerFastq=$(($nbTotalReads*1000000*2/$nbFastq))
     rm -f meta-bam-out/sample_R1.fq
@@ -56,14 +56,14 @@ fi
 
 ### STAR Alignment ###
 
-if [[ "$SE_PE" == "SE" ]]
+if [[ "$SE_PE" == "-SE" ]]
   then
     STAR --genomeDir $referenceGenome \
     --runThreadN 2 \
     --readFilesIn meta-bam-out/sample.fq \
     --outFileNamePrefix meta-bam-out/STARoutput
 
-elif [[ "$SE_PE" == "PE" ]]
+elif [[ "$SE_PE" == "-PE" ]]
   then
     STAR --genomeDir $referenceGenome \
     --runThreadN 2 \
