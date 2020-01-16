@@ -35,7 +35,7 @@ The parameters are :
 
 Example :
 ```
-./meta-bam.sh PE listFastQgz.txt 50 data/indexStar
+./meta-bam.sh -PE listFastQgz.txt 50 data/indexStar
 ```
 
 ## Final folder hierarchy
