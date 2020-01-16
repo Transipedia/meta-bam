@@ -7,7 +7,7 @@ This bash script produces a "meta-bam" file by :
 ## Dependencies
 
 This script requires :
-- **[reformat.sh](https://github.com/BioInfoTools/BBMap)** Part of BBMap, for random sampling of reads
+- **[reformat.sh](https://github.com/BioInfoTools/BBMap)** from BBMap, for random sampling of reads
 - **[STAR](https://github.com/alexdobin/STAR)** Version 2.7.0f was tested, but all versions should work
 
 Both dependencies can be downloaded as so, or directly installed on a conda environment, using :
