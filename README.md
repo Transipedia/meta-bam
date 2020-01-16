@@ -73,11 +73,9 @@ The random sampling needs to open and read each file entirely, so this step is u
 
 Example runtimes:
 - 50M reads from 108 paired-end libraries of mean size 2Gb/file (gzipped) :
-Sampling : 5 hours
-Alignment : 15 minutes
+Sampling : 5 hours, Alignment : 15 minutes
 
 - 50M reads from 369 paired-end libraries of mean size 2Gb/file (gzipped) :
-Sampling : 15 hours
-Alignment : 17 minutes
+Sampling : 15 hours, Alignment : 17 minutes
 
 *Sampling time for one file ranges from 4 minutes (2Gb fastq.gz) to 6 minutes (10Gb fastq.gz), with 1 million reads sampled.*
