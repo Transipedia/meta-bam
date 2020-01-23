@@ -50,7 +50,7 @@ elif [[ "$SE_PE" == "-PE" ]]
 
 
 else
-    echo "Error : First argument should be either SE or PE"
+    echo "Error : First argument should be either -SE or -PE"
 fi
 
 
