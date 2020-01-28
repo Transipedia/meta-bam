@@ -37,7 +37,7 @@ The parameters are :
 - dataType = -SE or -PE, for single-end of paired-end data 
 - fastQList = A text file containing paths to every fastq.gz to sample from (can be single-end or paired-end data)
 - NbTotalReads = An integer: millions of reads to keep in the final BAM file (input 5 means 5'000'000). With option -PE: NbTotalReads are sampled in each R1 and R2 file, retaining read pairs.
-- referenceGenome = Path to the reference genome index for STAR alignment
+- referenceGenome = Path to the directory containing the genome index for STAR alignment
 
 Example :
 ```
