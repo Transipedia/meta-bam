@@ -1,10 +1,10 @@
 # meta-bam
 
-This bash script produces a "meta-bam" file by :
-- randomly sampling a given number of reads from a group of fastq(gz) file.
-- aligning those reads to a reference genome using the STAR aligner.
+This bash script produces a "meta-bam" file in 2 steps :
+- randomly sample a given number of reads from a group of fastq(gz) files.
+- align those reads to a reference genome using the STAR aligner.
 
-An example result with 4 meta-bam files is shown in Fig. 1. 
+Figure 1 shows 4 meta-bam files generated from 727 RNA-seq samples. 
 
 ![igv-metabam](igv-metabam.png)
 
