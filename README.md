@@ -69,7 +69,7 @@ Results can be found in the meta-bam-out folder :
 
 A typical fastQList file is provided in exampleFastqFile.txt.
 Note that the path to the actual fastq.gz files can be either relative or absolute.
-For paired-end data, each pair must be side by side in the file.
+For paired-end data, each pair must be consecutive in the file.
 
 ## Processing time
 
