@@ -8,7 +8,7 @@ Figure 1 shows 4 meta-bam files generated from 727 RNA-seq samples.
 
 ![igv-metabam](igv-metabam.png)
 
-Figure 1. IGV view of 727 Lung adenocarcinoma (LUAD) RNA-seq libraries combined into 4 meta-bam files. 
+Figure 1. IGV view of 727 Lung adenocarcinoma (LUAD) RNA-seq libraries from 2 studies (TCGA-LUAD and Seo et al. LUAD) combined into 4 meta-bam files. Top 2 lanes: samples from normal tissues, bottom 2 lanes: samples from tumor tissues. 
 
 ## Dependencies
 
