@@ -6,7 +6,7 @@ This bash script produces a "meta-bam" file by :
 
 An example result with 4 meta-bam files is shown in Fig. 1. 
 
-![vcf-metabam](vcf-metabam.png)
+![igv-metabam](igv-metabam.png)
 
 Figure 1. IGV view of 4 meta-bam files created from 4 Lung adenocarcinoma datasets. 
 
