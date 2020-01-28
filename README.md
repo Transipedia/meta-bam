@@ -1,10 +1,10 @@
 # meta-bam
 
-This bash script produces a "meta-bam" file in 2 steps :
+This bash script produces a "meta-bam" file by sampling reads from multiple RNA-seq libraries. This is done in 2 steps :
 - randomly sample a given number of reads from a group of fastq(gz) files.
 - align those reads to a reference genome using the STAR aligner.
 
-Figure 1 shows 4 meta-bam files generated from 727 RNA-seq samples. 
+Figure 1 shows 4 meta-bam files generated from large sets of RNA-seq samples. 
 
 ![igv-metabam](igv-metabam.png)
 
@@ -24,7 +24,7 @@ conda install -c bioconda bbmap
 
 ## Preparation
 
-STAR needs an indexed genome. To create your index, follow the steps in part 2 of the STAR manual (http://labshare.cshl.edu/shares/gingeraslab/www-data/dobin/STAR/STAR.posix/doc/STARmanual.pdf)
+STAR needs an indexed genome. To create an index, follow the steps in the STAR manual (http://labshare.cshl.edu/shares/gingeraslab/www-data/dobin/STAR/STAR.posix/doc/STARmanual.pdf)
 
 ## How to Run it ?
 
@@ -33,10 +33,10 @@ Once all dependencies are installed (or your conda environment activated), run t
 ./meta-bam.sh dataType fastQList NbTotalReads referenceGenome
 ```
 
-The parameters are :
+Command line parameters :
 - dataType = -SE or -PE, for single-end of paired-end data 
 - fastQList = A text file containing paths to every fastq.gz to sample from (can be single-end or paired-end data)
-- NbTotalReads = An integer: millions of reads to keep in the final BAM file (input 5 means 5'000'000). With option -PE: NbTotalReads are sampled in each R1 and R2 file, retaining read pairs.
+- NbTotalReads = An integer: millions of reads to keep in the final BAM file (input 5 means 5,000,000). With option -PE: NbTotalReads are sampled in each R1 and R2 file, retaining read pairs.
 - referenceGenome = Path to the directory containing the genome index for STAR alignment
 
 Example :
@@ -46,7 +46,7 @@ Example :
 
 ## Final folder hierarchy
 
-Every result can be found in the meta-bam-out folder :
+Results can be found in the meta-bam-out folder :
 ```
 ├── meta-bam
 │   ├── meta-bam.sh
