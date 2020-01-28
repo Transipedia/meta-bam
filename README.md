@@ -8,7 +8,7 @@ An example result with 4 meta-bam files is shown in Fig. 1.
 
 ![igv-metabam](igv-metabam.png)
 
-Figure 1. IGV view of 4 meta-bam files created from 4 Lung adenocarcinoma datasets. 
+Figure 1. IGV view of 727 Lung adenocarcinoma (LUAD) datasets combined into 4 meta-bam files. 
 
 ## Dependencies
 
