@@ -4,6 +4,12 @@ This bash script produces a "meta-bam" file by :
 - randomly sampling a given number of reads from a group of fastq(gz) file.
 - aligning those reads to a reference genome using the STAR aligner.
 
+An example result with 4 meta-bam files is shown in Fig. 1. 
+
+![vcf-metabam](vcf-metabam.png)
+
+Figure 1. IGV view of 4 meta-bam files created from 4 Lung adenocarcinoma datasets. 
+
 ## Dependencies
 
 This script requires :
