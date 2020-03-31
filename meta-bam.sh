@@ -61,14 +61,18 @@ if [[ "$SE_PE" == "-SE" ]]
     STAR --genomeDir $referenceGenome \
     --runThreadN 2 \
     --readFilesIn meta-bam-out/sample.fq \
-    --outFileNamePrefix meta-bam-out/STARoutput
+    --outFileNamePrefix meta-bam-out/STARoutput \
+    --alignIntronMax 50000 \
+    --alignSJoverhangMin 10
 
 elif [[ "$SE_PE" == "-PE" ]]
   then
     STAR --genomeDir $referenceGenome \
     --runThreadN 2 \
     --readFilesIn meta-bam-out/sample_R1.fq meta-bam-out/sample_R2.fq \
-    --outFileNamePrefix meta-bam-out/STARoutput
+    --outFileNamePrefix meta-bam-out/STARoutput \
+    --alignIntronMax 50000 \
+    --alignSJoverhangMin 10
 
 fi
 
