@@ -15,11 +15,12 @@ Figure 1. IGV view of 727 Lung adenocarcinoma (LUAD) RNA-seq libraries from 2 st
 This script requires :
 - **[reformat.sh](https://github.com/BioInfoTools/BBMap)** from BBMap, for random sampling of reads
 - **[STAR](https://github.com/alexdobin/STAR)** Version 2.7.0f was tested, but all versions should work
-
+- **[samtools](https://github.com/samtools/samtools)** 
 Both dependencies can be downloaded as so, or directly installed on a conda environment, using :
 ```
 conda install -c bioconda star
 conda install -c bioconda bbmap
+conda install -c bioconda samtools
 ```
 
 ## Preparation
@@ -65,6 +66,8 @@ Results can be found in the meta-bam-out folder :
 │   │   ├── STARoutputSJ.out.tab
 │   │   ├── STARoutputLog.final.out
 │   │   ├── STARoutputAligner.out.sam
+│   │   ├── Aligned.bam
+│   │   ├── Aligned.bam.bai
 ```
 
 A typical fastQList file is provided in exampleFastqFile.txt.
