@@ -78,7 +78,7 @@ fi
 
 echo "Alignment done : Files generated in meta-bam-out/"
 
-samtools sort -T meta-bam-out/ meta-bam-out/STARoutputAligner.out.sam > meta-bam-out/Aligned.bam
+samtools sort -T meta-bam-out/ meta-bam-out/STARoutputAligned.out.sam > meta-bam-out/Aligned.bam
 samtools index meta-bam-out/Aligned.bam
 
 echo "BAM and BAI done : Files generated in meta-bam-out/"
