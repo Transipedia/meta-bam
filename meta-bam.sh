@@ -41,7 +41,7 @@ elif [[ "$SE_PE" == "-PE" ]]
           fastQR1=$p2
           fastQR2=$p1
       else
-        echo "Error : The fastQList file might be mixed up. Each pair should be side by side in the list."
+        echo "Error : The fastQList file might be mixed up. Pairs should be consecutive in the list."
         break
       fi
       seed=$RANDOM
